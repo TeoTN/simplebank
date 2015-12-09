@@ -1,0 +1,10 @@
+<form ng-submit="vm.login()" novalidate>
+	<div ng-if="errors">
+		<p ng-repeat="error in errors">{{error}}</p>
+	</div>
+	<label for="login_input">Identyfikator:</label>
+	<input type="text" id="login_input" placeholder="" ng-model="user.id">
+	<label for="pass_input">Hasło:</label>
+	<input type="password" id="pass_input" placeholder="" ng-model="user.password">
+	<input type="submit" value="Zaloguj">
+</form>
