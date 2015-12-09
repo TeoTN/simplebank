@@ -1,0 +1,21 @@
+{
+  "name": "simplebank",
+  "version": "1.0.0",
+  "description": "Simple Bank front-end application DEMO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeoTN/simplebank.git"
+  },
+  "author": "Zuzanna Gniewaszewska, Piotr Staniów",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TeoTN/simplebank/issues"
+  },
+  "homepage": "https://github.com/TeoTN/simplebank#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
