@@ -1,20 +1,23 @@
 <div class="panel">
 	<div class="panel-heading">Lista otwartych rachunków</div>
 	<div class="panel-body">
-		<div class="account">
-			<h2>{{account.title}}&nbsp;<small class="fg-secondary">{{account.type}}</small></h2>
+		<div ng-if="errors">
+			<p ng-repeat="error in errors">{{error}}</p>
+		</div>
+		<div class="account" ng-repeat="account in account_list">
+			<h2>{{account.name}}&nbsp;<small class="fg-secondary">{{account.type}}</small></h2>
 			<div class="text-right">
 				<div class="account-col">
 					<h3>Saldo bieżące</h3>
-					<h1 class="fg-primary">10.00</h1>
+					<h1 class="fg-primary">{{account.balance}}</h1>
 				</div>
 				<div class="account-col">
-					<h3>Kwota dostępna</h3>
-					<h1 class="fg-primary">1230.00</h1>
+					<h3>Dostępna kwota</h3>
+					<h1 class="fg-primary">{{account.amount}}</h1>
 				</div>
 				<div class="account-col">
 					<h3>Środki zablokowane</h3>
-					<h1 class="fg-primary">910.00</h1>
+					<h1 class="fg-primary">{{account.deposit}}</h1>
 				</div>
 			</div>
 		</div>

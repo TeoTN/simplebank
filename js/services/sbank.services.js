@@ -3,7 +3,8 @@
 	angular
 		.module('sbank.services')
 		.factory('User', User)
-		.factory('Auth', Auth);
+		.factory('Auth', Auth)
+		.factory('Account', Account);
 	
 	Auth.$inject = ['$q', '$cookies', '$location', '$rootScope', 'User', 'EVENTS']
 	function Auth($q, $cookies, $location, $rootScope, User, EVENTS) {
@@ -95,4 +96,27 @@
 			return deferred.promise;
 		}
 	}
+
+	Account.$inject = ['$http', '$q']
+	function Account($http, $q){
+		var account_list = [];
+		return {list: list};
+
+		function list(){
+			var deferred = $q.defer();
+			if(account_list.length > 0){
+				deferred.resolve(account_list);
+			}
+			else {
+				$http
+					.get('/data/accounts.json')
+					.then(function(response){
+						deferred.resolve(response.data);
+					},function(error){
+						deferred.reject(error);
+					});
+			}
+			return deferred.promise;
+		}
+	} 
 })();

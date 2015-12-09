@@ -43,8 +43,16 @@
 
 		function WelcomePageController() {}
 
-		AccountsController.$inject = ['$scope'];
-		function AccountsController($scope) {
-
+		AccountsController.$inject = ['$scope', 'Account'];
+		function AccountsController($scope, Account) {
+			$scope.account_list = [];
+			$scope.errors = [];
+			Account
+				.list()
+				.then(function(result){
+					$scope.account_list = result;
+				}, function(error){
+					$scope.errors.push(error);
+				});
 		}
 })();
