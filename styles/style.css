@@ -33,6 +33,16 @@ footer {
     padding: 20px;
     color: white;
 }
+
+a input{
+	text-decoration: none;
+}
+input {
+	border-style: none none solid;
+	border-color: #455a64;
+	border-width: 1px;
+}
+
 .bg-primary{
 	background: #e91e63 !important;
 }
@@ -86,7 +96,6 @@ ul.vertical li{
 }
 nav.navbar div ul li a{
 	color: #e91e63;
-	text-decoration: none;
 	margin: 2px 8px;
 }
 nav.navbar div ul{
