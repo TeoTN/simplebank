@@ -7,9 +7,9 @@
 		.controller('WelcomePageController', WelcomePageController)
 		.controller('AccountsController', AccountsController);
 	
-		NavbarController.$inject = ['$scope', '$rootScope', 'EVENTS'];
-		function NavbarController($scope, $rootScope, EVENTS) {
-			$scope.authenticated = false;
+		NavbarController.$inject = ['$scope', '$rootScope', 'Auth', 'EVENTS'];
+		function NavbarController($scope, $rootScope, Auth, EVENTS) {
+			$scope.authenticated = Auth.is_logged_in();
 			$rootScope.$on(EVENTS.SIGNIN, function(event, data) {
 				$scope.authenticated = true;
 			});

@@ -42,6 +42,15 @@
                 controller: 'AccountsController',
                 controllerAs: 'vm',
             })
+            .when('/logout/', {
+                templateUrl: '/views/accounts.html',
+                controller: ['Auth', function(Auth) {
+                    Auth.logout();
+                }],
+            })
+            .when('/notfound/', {
+                templateUrl: '/views/notfound.html',
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -51,7 +60,7 @@
     
     function run($rootScope, $cookies, $location) {
         $rootScope.$on( "$routeChangeStart", function(event, next, current) {
-            var username = $cookies.get('username');
+            var username = $cookies.get('user');
             if ( !username && next.requireAuth) {
                 $location.path('/');
             }

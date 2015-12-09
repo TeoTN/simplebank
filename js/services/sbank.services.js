@@ -42,9 +42,7 @@
 
 		function logout() {
 			$cookies.remove('user');
-			$rootScope.$broadcast(EVENTS.LOGOUT, {
-				user: user
-			});
+			$rootScope.$broadcast(EVENTS.LOGOUT, {});
 			$location.path("/");
 		}
 	}

@@ -1,0 +1,16 @@
+[{
+	"id": 1,
+	"name": "Szybki Bill",
+	"type": "Rachunek oszczędnościowo-rozliczeniowy",
+	"balance": 763.11,
+	"amount": 1297.03,
+	"deposit": 49.57
+},
+{
+	"id": 2,
+	"name": "Twardy Zawodnik",
+	"type": "Rachunek oszczędnościowy",
+	"balance": 0.00,
+	"amount": 37215.14,
+	"deposit": 0.00
+}]
