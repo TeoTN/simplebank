@@ -105,3 +105,18 @@ nav.navbar div ul{
 .pull-right{
 	float: right;
 }
+
+.panel{
+	margin: 25px;
+}
+
+.panel-heading{
+	background: #c2185b;
+	color: white;
+	padding: 10px 25px;
+}
+
+.panel-body{
+	background: #f5f5f5;
+	padding: 10px 25px;
+}
