@@ -25,6 +25,14 @@ main {
     overflow:hidden;
     z-index:-1;
 }
+footer {
+	position:absolute;
+	bottom:0;
+	left:0;
+    right:0;
+    padding: 20px;
+    color: white;
+}
 .bg-primary{
 	background: #e91e63 !important;
 }
