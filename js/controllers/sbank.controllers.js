@@ -7,10 +7,19 @@
 		.controller('WelcomePageController', WelcomePageController)
 		.controller('AccountsController', AccountsController);
 	
-		function NavbarController() {}
+		NavbarController.$inject = ['$scope', '$rootScope', 'EVENTS'];
+		function NavbarController($scope, $rootScope, EVENTS) {
+			$scope.authenticated = false;
+			$rootScope.$on(EVENTS.SIGNIN, function(event, data) {
+				$scope.authenticated = true;
+			});
+			$rootScope.$on(EVENTS.LOGOUT, function(event, data) {
+				$scope.authenticated = false;
+			});
+		}
 
-		LoginFormController.$inject = ['$scope', 'Auth']
-		function LoginFormController($scope, Auth) {
+		LoginFormController.$inject = ['$scope', '$location', 'Auth']
+		function LoginFormController($scope, $location, Auth) {
 			var vm = this;
 			$scope.user = {
 				id: "",
@@ -23,7 +32,7 @@
 				Auth
 					.login($scope.user.id, $scope.user.password)
 					.then(function(id) {
-						console.log("Zalogowany");
+						$location.path("/accounts/");
 					},
 					function(error) {
 						$scope.errors.push(error);

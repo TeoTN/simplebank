@@ -12,7 +12,11 @@
 	angular
 		.module('sbank', dependencies)
 		.config(config)
-		.run(run);
+		.run(run)
+        .constant("EVENTS",  {
+            "SIGNIN": "sign-in",
+            "LOGOUT": "log-out"
+        });
 
 	angular.module('sbank.controllers', [])
 	angular.module('sbank.directives', [])
@@ -27,13 +31,22 @@
                 controllerAs: 'vm',
                 redirectAuth: '/accounts/'
             })
-            .when('/profile/', {
+            .when('/login/', {
+                templateUrl: '/views/login_form.html',
+                controller: 'LoginFormController',
+                controllerAs: 'vm',
+                redirectAuth: '/accounts/'
+            })
+            .when('/accounts/', {
                 templateUrl: '/views/accounts.html',
                 controller: 'AccountsController',
                 controllerAs: 'vm',
+            })
+            .otherwise({
+                redirectTo: '/'
             });
            
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(false).hashPrefix('!');
     }
     
     function run($rootScope, $cookies, $location) {
@@ -47,5 +60,4 @@
             }
         });
     }
-
 })();

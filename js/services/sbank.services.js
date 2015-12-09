@@ -5,12 +5,17 @@
 		.factory('User', User)
 		.factory('Auth', Auth);
 	
-	Auth.$inject = ['$q', '$cookies', '$location', 'User']
-	function Auth($q, $cookies, $location, User) {
+	Auth.$inject = ['$q', '$cookies', '$location', '$rootScope', 'User', 'EVENTS']
+	function Auth($q, $cookies, $location, $rootScope, User, EVENTS) {
 		return {
 			login: login,
-			logout: logout
+			logout: logout,
+			is_logged_in: is_logged_in
 		};
+
+		function is_logged_in() {
+			return !!$cookies.get("user");
+		}
 
 		function login(id, password) {
 			var loginDeferred = $q.defer();
@@ -18,6 +23,9 @@
 			retrieveUserPromise.then(function(user) {
 				if (sha1(password) == user.password) {
 					$cookies.putObject('user', user);
+					$rootScope.$broadcast(EVENTS.SIGNIN, {
+						user: user
+					});
 					loginDeferred.resolve(id);
 				}
 				else {
@@ -34,6 +42,9 @@
 
 		function logout() {
 			$cookies.remove('user');
+			$rootScope.$broadcast(EVENTS.LOGOUT, {
+				user: user
+			});
 			$location.path("/");
 		}
 	}

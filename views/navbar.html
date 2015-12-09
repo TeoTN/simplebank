@@ -1,6 +1,6 @@
 <nav class="navbar">
 	<h1>SimpleBank</h1>
-	<div class="menu">
+	<div class="menu" ng-if="!authenticated">
 		<ul class="vertical">
 			<li><a href="/">Konta osobiste</a></li>
 			<li><a href="/">Karty płatnicze</a></li>
@@ -8,9 +8,9 @@
 			<li><a href="/">Produkty oszczędnościowe</a></li>
 			<li><a href="/">Inwestycje</a></li>
 		</ul>
-		<a class="btn-primary pull-right">Logowanie</a>
+		<a href="/#!login/" class="btn-primary pull-right">Logowanie</a>
 	</div>
-	<div class="menu">
+	<div class="menu" ng-if="authenticated">
 		<ul class="vertical">
 			<li><a href="/">Twoje konta</a></li>
 			<li><a href="/">Przelewy</a></li>
