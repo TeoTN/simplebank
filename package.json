@@ -16,6 +16,10 @@
     "url": "https://github.com/TeoTN/simplebank/issues"
   },
   "homepage": "https://github.com/TeoTN/simplebank#readme",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "http-server": "^0.8.5" 
+  },
+  "devDependencies": {
+    "http-server": "^0.8.5"
+  }
 }
