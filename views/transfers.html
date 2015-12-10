@@ -1,6 +1,38 @@
+<div class="panel">
+	<div class="panel-heading">Historia przelewów</div>
+	<div class="panel-body">
+		<div ng-if="errors">
+			<p ng-repeat="error in errors">{{error}}</p>
+		</div>
+		<table ng-if="!!transfers">
+			<tr>
+				<th class="col-20">Data transakcji</th>
+				<th class="col-70">Opis</th>
+				<th class="col-10">Kwota</th>
+			</tr>
+			<tr ng-repeat="transfer in transfers">
+				<td class="col-20">{{ transfer.datetime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+				<td class="col-70">
+					<p><strong>Z konta:&nbsp;</strong>{{ transfer.from.name }} (przelew)</p>
+					<p><strong>Odbiorca:&nbsp;</strong>{{ transfer.recipent.name }}</p>
+					<p><small>{{ transfer.recipent.account }}</small></p>
+				</td>
+				<td class="col-10">
+					<h1 class="fg-primary">-{{ transfer.amount | number:2 }}</h1>
+				</td>
+			</tr>
+		</table>
+		<div class="bg-primary-lt fg-primary-dk with-padding block-center" ng-if="!transfers">
+			Nie wykonano żadnego przelewu
+		</div>
+	</div>
+</div>
+
+<!--
 <h1>Przelewy</h1>
-<div ng-repeat="transfer in transfers">
+<div >
 	<p>Z konta: {{ transfer.from }}</p>
 	<p>Do odbiorcy: {{ transfer.recipent.name }} ({{ transfer.recipent.account }})</p>
 	<p>Kwota: {{ transfer.amount }}</p>
 </div>
+-->

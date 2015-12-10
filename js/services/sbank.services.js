@@ -45,6 +45,7 @@
 		function logout() {
 			$cookies.remove('user');
 			$cookies.remove('accounts');
+			$cookies.remove('transfers');
 			$rootScope.$broadcast(EVENTS.LOGOUT, {});
 			$location.path("/");
 		}
@@ -174,7 +175,6 @@
 		}
 
 		function make_transfer(transfer) {
-			console.log("Transfer", transfer);
 			var accounts = $cookies.getObject('accounts');
 			var transfers = $cookies.getObject('transfers') || [];
 			for (var i in accounts) {
@@ -184,9 +184,8 @@
 					accounts[i] = transfer.from;
 				}
 			}
-
+			transfer.datetime = new Date();
 			transfers.push(transfer);
-
 			$cookies.putObject('accounts', accounts);
 			$cookies.putObject('transfers', transfers)
 		}

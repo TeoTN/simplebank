@@ -90,6 +90,6 @@
 
 	TransfersController.$inject = ['$scope', 'Transfer'];
 	function TransfersController($scope, Transfer) {
-		$scope.tranfers = Transfer.list();
+		$scope.transfers = Transfer.list();
 	}
 })();
