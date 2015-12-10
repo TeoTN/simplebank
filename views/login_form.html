@@ -1,4 +1,6 @@
-<form ng-submit="vm.login()" novalidate>
+<div id="login_wrapper">
+<h2>Logowanie</h2>
+<form ng-submit="vm.login()" novalidate id="login_form">
 	<div ng-if="errors">
 		<p ng-repeat="error in errors">{{error}}</p>
 	</div>
@@ -12,3 +14,4 @@
 	</div>
 	<input type="submit" value="Zaloguj" class="btn-primary">
 </form>
+</div>
