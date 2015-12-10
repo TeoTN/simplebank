@@ -1,1 +1,14 @@
-Simple bank application
+# Simple bank application
+
+The project was build in a pair as a proof-of-concept during the course *Ergonomy of Information Systems* at Wroclaw University of Technology.
+It was supposed not to have any means of storing data, however to provide user with possibility to interact with it, few variables are pushed ad hoc to cookies and removed during logging out.
+
+Functionalities required and developed are:
+* Authentication
+* Displaying user accounts
+* Making a transfer
+* Displaying a history of transfers
+
+The application language is Polish. Styles aren't polished yet, hence there are some glitches. 
+It can be run with http-server which is provided by npm.
+It was built in mere few hours so please forgive us all its imperfections and not using Bootstrap.
