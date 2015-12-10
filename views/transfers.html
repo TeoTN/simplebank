@@ -1,0 +1,6 @@
+<h1>Przelewy</h1>
+<div ng-repeat="transfer in transfers">
+	<p>Z konta: {{ transfer.from }}</p>
+	<p>Do odbiorcy: {{ transfer.recipent.name }} ({{ transfer.recipent.account }})</p>
+	<p>Kwota: {{ transfer.amount }}</p>
+</div>
