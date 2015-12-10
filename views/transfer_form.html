@@ -5,11 +5,10 @@
 			<p ng-repeat="error in errors">{{error}}</p>
 		</div>
 		<form id="transfer_form" ng-submit="vm.make_transfer(transfer);" novalidate>
-				<pre>{{transfer}}</pre>
 				<div class="input-group">
 					<label for="account_select">Numer rachunku nadawcy:</label>
-					<select id="account_select" ng-model="transfer.from">
-						<option ng-repeat="account in account_list" value="{{account.id}}">{{account.name}}</option>
+					<select id="account_select" ng-model="transfer.from" 
+						ng-options="account.id as account.name for account in account_list">
 					</select>
 				</div>
 				<div class="input-group">
@@ -21,10 +20,10 @@
 					<input type="text" id="name_input" placeholder="" ng-model="transfer.recipent.name">
 				</div>
 				<div class="input-group">
-					<input type="checkbox" id="checkbox">
+					<input type="checkbox" id="checkbox" ng-model="show_address">
 					<label for="address_checkbox">Adres odbiorcy (opcjonalnie)</label>
 				</div>
-				<div class="input-group">
+				<div class="input-group" ng-show="show_address">
 					<label for="address_input">Adres odbiorcy</label>
 					<input type="text" id="address_input">
 				</div>

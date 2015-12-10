@@ -59,8 +59,8 @@
 			});
 	}
 
-	NewTransferController.$inject = ['$scope', 'Account', 'Transfer'];
-	function NewTransferController($scope, Account, Transfer) {
+	NewTransferController.$inject = ['$scope', '$routeParams','Account', 'Transfer'];
+	function NewTransferController($scope, $routeParams, Account, Transfer) {
 		var vm = this;
 		$scope.account_list = [];
 		$scope.errors = [];
@@ -71,7 +71,7 @@
 			},
 			title: '',
 			amount: 0.00,
-			from: null
+			from: parseInt($routeParams.account_id)
 		}
 		
 		Account
