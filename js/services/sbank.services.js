@@ -4,7 +4,8 @@
 		.module('sbank.services')
 		.factory('User', User)
 		.factory('Auth', Auth)
-		.factory('Account', Account);
+		.factory('Account', Account)
+		.factory('Transfer', Transfer);
 	
 	Auth.$inject = ['$q', '$cookies', '$location', '$rootScope', 'User', 'EVENTS']
 	function Auth($q, $cookies, $location, $rootScope, User, EVENTS) {
@@ -43,6 +44,7 @@
 
 		function logout() {
 			$cookies.remove('user');
+			$cookies.remove('accounts');
 			$rootScope.$broadcast(EVENTS.LOGOUT, {});
 			$location.path("/");
 		}
@@ -102,7 +104,6 @@
 		var account_list = [];
 		return {
 			list: list,
-			make_transfer: make_transfer,
 			cached_list_by_user: cached_list_by_user
 		};
 
@@ -159,9 +160,22 @@
 			}
 			return deferred.promise;
 		}
+	}
 
-		function make_transfer(account, amount) {
+	Transfer.$inject = ['$cookies'];
+	function Transfer($cookies) {
+		return {
+			make_transfer: make_transfer,
+			list: list
+		}
+
+		function list() {
+			return $cookies.getObject('transfers');
+		}
+
+		function make_transfer(account, amount, recipent) {
 			var accounts = $cookies.getObject('accounts');
+			var transfers = $cookies.getObject('transfers') || [];
 			for (var i in accounts) {
 				if (accounts[i].id == account.id) {
 					account.balance += amount;
@@ -169,7 +183,15 @@
 					accounts[i] = account;
 				}
 			}
+
+			transfers.push({
+				from: account.name,
+				to: recipent,
+				amount: amount
+			});
+
 			$cookies.putObject('accounts', accounts);
+			$cookies.putObject('transfers', transfers)
 		}
-	} 
+	}
 })();

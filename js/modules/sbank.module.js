@@ -42,6 +42,16 @@
                 controller: 'AccountsController',
                 controllerAs: 'vm',
             })
+            .when('/transfers/', {
+                templateUrl: '/views/transfers.html',
+                controller: 'TransfersController',
+                controllerAs: 'vm',
+            })
+            .when('/transfers/new/', {
+                templateUrl: '/views/new_transfer.html',
+                controller: 'NewTransferController',
+                controllerAs: 'vm',
+            })
             .when('/logout/', {
                 templateUrl: '/views/accounts.html',
                 controller: ['Auth', function(Auth) {
