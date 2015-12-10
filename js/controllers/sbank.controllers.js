@@ -18,6 +18,13 @@
 		$rootScope.$on(EVENTS.LOGOUT, function(event, data) {
 			$scope.authenticated = false;
 		});
+		var main = $("main");
+		var main_height = main.height();
+		var screen_height = $(window).height();
+		if (main_height < screen_height) {
+			main.height(screen_height-50);
+		}
+		$("footer").offset({top: main.position().top+main.height()});
 	}
 
 	LoginFormController.$inject = ['$scope', '$location', 'Auth']
@@ -59,8 +66,8 @@
 			});
 	}
 
-	NewTransferController.$inject = ['$scope', '$routeParams','Account', 'Transfer'];
-	function NewTransferController($scope, $routeParams, Account, Transfer) {
+	NewTransferController.$inject = ['$scope', '$routeParams', '$location', 'Account', 'Transfer'];
+	function NewTransferController($scope, $routeParams, $location, Account, Transfer) {
 		var vm = this;
 		$scope.account_list = [];
 		$scope.errors = [];
@@ -85,6 +92,7 @@
 		vm.make_transfer = function(transfer) {
 			transfer.from = $scope.account_list.filter(function(e) { return e.id == transfer.from})[0];
 			Transfer.make_transfer(transfer);
+			$location.path("/transfers/");
 		}
 	}
 

@@ -17,21 +17,13 @@ main {
 	border-width: 1px;
 	border-color: #cfd8dc;
 	display: block;
-	position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    overflow:hidden;
     z-index:-1;
 }
 footer {
-	position:absolute;
-	bottom:0;
-	left:0;
-    right:0;
     padding: 20px;
     color: white;
+    margin: 0 150px;
+    height: 150px;
 }
 
 a {
@@ -43,12 +35,12 @@ a, input {
 	text-decoration: none;
 }
 
-input, textarea {
+input:not([type="checkbox"]):not([type="submit"]), textarea, select {
 	border-style: none none solid;
 	border-color: #455a64;
 	border-width: 1px;
-	margin: 10px 15px;
 	background: none;
+	height: 24px;
 }
 
 h1 {
@@ -105,7 +97,7 @@ th {
 .bg-secondary-dk {
 	background: #37474f !important;
 }
-.fg-primary {
+.fg-primary, input {
 	color: #e91e63 !important;
 }
 .fg-primary-lt {
@@ -131,9 +123,10 @@ th {
 }
 .btn-primary {
 	background: #c2185b;
-	color: white;
+	color: white !important;
 	padding: 10px 25px;
 	margin: 0 25px;
+	border: 0;
 }
 ul.vertical li {
 	display: inline-block;
@@ -144,7 +137,7 @@ nav.navbar div ul li a {
 }
 nav.navbar div ul {
 	display: inline-block;
-	padding: 8px 15px;
+	padding: 10px 15px;
 }
 .pull-right {
 	float: right;
@@ -184,7 +177,6 @@ nav.navbar div ul {
 #login_wrapper {
 	margin: 25px;
 	padding: 25px;
-	width: 30%;
 	background: rgba(207, 216, 220, 0.5);
 }
 
@@ -197,34 +189,34 @@ input:-webkit-autofill {
 }
 
 .col-10 {
-	width: 10%;
+	width: 10% !important;
 }
 .col-20 {
-	width: 20%;
+	width: 20% !important;
 }
 .col-30 {
-	width: 30%;
+	width: 30% !important;
 }
 .col-40 {
-	width: 40%;
+	width: 40% !important;
 }
 .col-50 {
-	width: 50%;
+	width: 50% !important;
 }
 .col-60 {
-	width: 60%;
+	width: 60% !important;
 }
 .col-70 {
-	width: 70%;
+	width: 70% !important;
 }
 .col-80 {
-	width: 80%;
+	width: 80% !important;
 }
 .col-90 {
-	width: 90%;
+	width: 90% !important;
 }
 .col-100 {
-	width: 100%;
+	width: 100% !important;
 }
 
 .with-padding {
@@ -233,4 +225,40 @@ input:-webkit-autofill {
 
 .block-center {
 	margin: 0 auto;
+}
+
+.validate input.ng-dirty.ng-invalid,
+.validate select.ng-dirty.ng-invalid {
+	border-bottom: 2px solid #f00;
+}
+
+.validate input.ng-dirty.ng-valid,
+.validate select.ng-dirty.ng-valid {
+	border-bottom: 2px solid #0a0;
+}
+
+.input-group {
+	display: block;
+	margin: 15px 15px;
+}
+
+.input-group label {
+	font-weight: bold;
+}
+select,
+.input-group input:not([type="checkbox"]) {
+	width: 100%;
+}
+
+.form-horizontal .input-group label,
+.form-horizontal .input-group input {
+	display: inline-block;
+}
+
+.form-horizontal .input-group input:not([type="checkbox"]) {
+	width: auto;
+}
+
+.scrollable {
+	overflow-y: scroll;
 }

@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Simple Bank</title>
 	<base href="/">
+	<script src="js/dependencies/jquery-2.1.4.min.js"></script>
 	<script src="js/dependencies/angular.min.js"></script>
 	<script src="js/dependencies/angular-cookies.min.js"></script>
 	<script src="js/dependencies/angular-route.min.js"></script>
@@ -22,9 +23,9 @@
 	<header>
 		<navbar></navbar>
 	</header>
-	<ng-view></ng-view>
-	<footer class="bg-secondary-dk">
-	</footer>
+	<ng-view class="scrollable"></ng-view>
 </main>
+<footer class="bg-secondary-dk">
+</footer>
 </body>
 </html>

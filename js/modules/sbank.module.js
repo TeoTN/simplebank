@@ -17,6 +17,12 @@
             "SIGNIN": "sign-in",
             "LOGOUT": "log-out"
         });
+    
+    angular.module('sbank').filter('get_selected_account', function() {
+        return function (account_list, account_id) {
+            return account_list.filter(function(e) {return e.id == account_id})[0];
+        };
+    });
 
 	angular.module('sbank.controllers', [])
 	angular.module('sbank.directives', [])

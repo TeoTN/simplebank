@@ -1,7 +1,7 @@
 <div class="panel">
 	<div class="panel-heading">Historia przelewów</div>
 	<div class="panel-body">
-		<div ng-if="errors">
+		<div ng-if="errors" class="bg-primary-lt fg-primary-dk with-padding block-center">
 			<p ng-repeat="error in errors">{{error}}</p>
 		</div>
 		<table ng-if="!!transfers">
