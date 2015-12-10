@@ -174,7 +174,6 @@
 		}
 
 		function make_transfer(transfer) {
-			console.log("Transfer", transfer);
 			var accounts = $cookies.getObject('accounts');
 			var transfers = $cookies.getObject('transfers') || [];
 			for (var i in accounts) {
@@ -186,7 +185,6 @@
 			}
 
 			transfers.push(transfer);
-
 			$cookies.putObject('accounts', accounts);
 			$cookies.putObject('transfers', transfers)
 		}
