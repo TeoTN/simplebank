@@ -34,17 +34,26 @@ footer {
     color: white;
 }
 
+a {
+	margin: 2px 10px;
+	color: #c2185b;
+}
+
 a, input {
 	text-decoration: none;
 }
+
 input {
 	border-style: none none solid;
 	border-color: #455a64;
 	border-width: 1px;
+	margin: 10px 15px;
+	background: none;
 }
 
 h1 {
 	font-size: 30px;
+	margin-top: 5px;
 }
 h2 {
 	font-size: 24px;
@@ -115,14 +124,14 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 ul.vertical li {
 	display: inline-block;
+
 }
 nav.navbar div ul li a {
 	color: #e91e63;
-	margin: 2px 8px;
 }
 nav.navbar div ul {
 	display: inline-block;
-	padding: 8px 10px;
+	padding: 8px 15px;
 }
 .pull-right {
 	float: right;
@@ -149,4 +158,23 @@ nav.navbar div ul {
 .account-col {
 	display: inline-block;
 	width: 20%;
+}
+
+.account {
+	margin: 10px 0 30px;
+}
+
+#login_form {
+	text-align: right;
+}
+
+#login_wrapper {
+	margin: 25px;
+	padding: 25px;
+	width: 30%;
+	background: rgba(207, 216, 220, 0.5);
+}
+
+#account_links {
+	margin: 8px 5px 5px;	
 }
