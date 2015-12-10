@@ -43,6 +43,7 @@
 
 		function logout() {
 			$cookies.remove('user');
+			$cookies.remove('accounts');
 			$rootScope.$broadcast(EVENTS.LOGOUT, {});
 			$location.path("/");
 		}
