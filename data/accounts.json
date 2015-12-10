@@ -4,7 +4,8 @@
 	"type": "Rachunek oszczędnościowo-rozliczeniowy",
 	"balance": 763.11,
 	"amount": 1297.03,
-	"deposit": 49.57
+	"deposit": 49.57,
+	"user": "007"
 },
 {
 	"id": 2,
@@ -12,5 +13,6 @@
 	"type": "Rachunek oszczędnościowy",
 	"balance": 0.00,
 	"amount": 37215.14,
-	"deposit": 0.00
+	"deposit": 0.00,
+	"user": "007"
 }]

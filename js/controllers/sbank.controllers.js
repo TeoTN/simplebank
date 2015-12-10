@@ -45,14 +45,17 @@
 
 		AccountsController.$inject = ['$scope', 'Account'];
 		function AccountsController($scope, Account) {
+			var vm = this;
 			$scope.account_list = [];
 			$scope.errors = [];
 			Account
-				.list()
+				.cached_list_by_user()
 				.then(function(result){
 					$scope.account_list = result;
 				}, function(error){
 					$scope.errors.push(error);
 				});
+
+			vm.make_transfer = Account.make_transfer;
 		}
 })();

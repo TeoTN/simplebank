@@ -9,17 +9,18 @@
 			<div class="text-right">
 				<div class="account-col">
 					<h3>Saldo bieżące</h3>
-					<h1 class="fg-primary">{{account.balance}}</h1>
+					<h1 class="fg-primary">{{account.balance | number:2}}</h1>
 				</div>
 				<div class="account-col">
 					<h3>Dostępna kwota</h3>
-					<h1 class="fg-primary">{{account.amount}}</h1>
+					<h1 class="fg-primary">{{account.amount | number:2}}</h1>
 				</div>
 				<div class="account-col">
 					<h3>Środki zablokowane</h3>
-					<h1 class="fg-primary">{{account.deposit}}</h1>
+					<h1 class="fg-primary">{{account.deposit | number:2}}</h1>
 				</div>
 			</div>
+			<a href="#" ng-click="vm.make_transfer(account, 50.01);">Przelej 50.01zł w kosmos</a>
 		</div>
 	</div>
 </div>
