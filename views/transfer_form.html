@@ -4,44 +4,43 @@
 		<div ng-if="errors">
 			<p ng-repeat="error in errors">{{error}}</p>
 		</div>
-		<form id="transfer_form">
+		<form id="transfer_form" ng-submit="vm.make_transfer(transfer);" novalidate>
+				<pre>{{transfer}}</pre>
 				<div class="input-group">
 					<label for="account_select">Numer rachunku nadawcy:</label>
-					<select id="account_select">
-						<option>Konto</option>
+					<select id="account_select" ng-model="transfer.from">
+						<option ng-repeat="account in account_list" value="{{account.id}}">{{account.name}}</option>
 					</select>
 				</div>
 				<div class="input-group">
 					<label for="account_input">Numer rachunku odbiorcy:</label>
-					<input type="text" id="account_input" placeholder="">
+					<input type="text" id="account_input" placeholder="" ng-model="transfer.recipent.account">
 				</div>
 				<div class="input-group">
 					<label for="name_input">Nazwa / Imię i nazwisko odbiorcy:</label>
-					<input type="text" id="name_input" placeholder="">
+					<input type="text" id="name_input" placeholder="" ng-model="transfer.recipent.name">
 				</div>
 				<div class="input-group">
-					<label for="address_checkbox">Adres odbiorcy (opcjonalnie)</label>
 					<input type="checkbox" id="checkbox">
+					<label for="address_checkbox">Adres odbiorcy (opcjonalnie)</label>
 				</div>
 				<div class="input-group">
 					<label for="address_input">Adres odbiorcy</label>
 					<input type="text" id="address_input">
 				</div>
 				<div class="input-group">
-					<label for="add_contact_checkbox">Dodaj do listy kontaktów</label>
 					<input type="checkbox" id="add_contact_checkbox">
+					<label for="add_contact_checkbox">Dodaj do listy kontaktów</label>
 				</div>
 				<div class="input-group">
 					<label for="title_input">Tytuł przelewu:</label>
-					<input type="text" id="title_input" placeholder="">
+					<input type="text" id="title_input" placeholder="" ng-model="transfer.title">
 				</div>
 				<div class="input-group">
-					<label for="available_textarea">Dostępna kwota:</label>
-					<textarea id="available_textarea"></textarea>
-				</div>
+					Dostępna kwota: 100
 				<div class="input-group">
 					<label for="amount_input">Kwota przelewu:</label>
-					<input type="text" id="amount_input" placeholder="">
+					<input type="text" id="amount_input" placeholder="" ng-model="transfer.amount">
 				</div>
 				<input type="submit" value="Wyślij" class="btn-primary">
 		</form>

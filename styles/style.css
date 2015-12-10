@@ -43,7 +43,7 @@ a, input {
 	text-decoration: none;
 }
 
-input {
+input, textarea {
 	border-style: none none solid;
 	border-color: #455a64;
 	border-width: 1px;

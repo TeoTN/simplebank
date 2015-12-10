@@ -61,15 +61,19 @@
 
 	NewTransferController.$inject = ['$scope', 'Account', 'Transfer'];
 	function NewTransferController($scope, Account, Transfer) {
+		var vm = this;
 		$scope.account_list = [];
 		$scope.errors = [];
-		$scope.recipent = {
-			name: '',
-			account: '',
+		$scope.transfer = {
+			recipent: {
+				name: '',
+				account: '',
+			},
 			title: '',
-			amount: 0.00
+			amount: 0.00,
+			from: null
 		}
-
+		
 		Account
 			.cached_list_by_user()
 			.then(function(result){
@@ -77,8 +81,11 @@
 			}, function(error){
 				$scope.errors.push(error);
 			});
-
-		vm.make_transfer = Transfer.make_transfer;
+		
+		vm.make_transfer = function(transfer) {
+			transfer.from = $scope.account_list.filter(function(e) { return e.id == transfer.from})[0];
+			Transfer.make_transfer(transfer);
+		}
 	}
 
 	TransfersController.$inject = ['$scope', 'Transfer'];

@@ -47,8 +47,8 @@
                 controller: 'TransfersController',
                 controllerAs: 'vm',
             })
-            .when('/transfers/new/', {
-                templateUrl: '/views/new_transfer.html',
+            .when('/transfers/new/:account_id', {
+                templateUrl: '/views/transfer_form.html',
                 controller: 'NewTransferController',
                 controllerAs: 'vm',
             })

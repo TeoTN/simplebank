@@ -173,22 +173,19 @@
 			return $cookies.getObject('transfers');
 		}
 
-		function make_transfer(account, amount, recipent) {
+		function make_transfer(transfer) {
+			console.log("Transfer", transfer);
 			var accounts = $cookies.getObject('accounts');
 			var transfers = $cookies.getObject('transfers') || [];
 			for (var i in accounts) {
-				if (accounts[i].id == account.id) {
-					account.balance += amount;
-					account.amount -= amount;		
-					accounts[i] = account;
+				if (accounts[i].id == transfer.from.id) {
+					transfer.from.balance += transfer.amount;
+					transfer.from.amount -= transfer.amount;		
+					accounts[i] = transfer.from;
 				}
 			}
 
-			transfers.push({
-				from: account.name,
-				to: recipent,
-				amount: amount
-			});
+			transfers.push(transfer);
 
 			$cookies.putObject('accounts', accounts);
 			$cookies.putObject('transfers', transfers)
