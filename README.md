@@ -1,7 +1,7 @@
 # Simple bank application
 
-The project was build in a pair as a proof-of-concept during the course *Ergonomy of Information Systems* at Wroclaw University of Technology.
-It was supposed not to have any means of storing data, however to provide user with possibility to interact with it, few variables are pushed ad hoc to cookies and removed during logging out.
+The project was built in pair as a proof-of-concept during the course *Ergonomy of Information Systems* at Wroclaw University of Technology.
+It was supposed not to have any means of storing data, though few variables are pushed ad hoc to cookies and removed during logging out to provide user with possibility to interact with the website.
 
 Functionalities required and developed are:
 * Authentication
