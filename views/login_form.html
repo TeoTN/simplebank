@@ -1,17 +1,18 @@
-<div id="login_wrapper" class="col-40">
-<h2>Logowanie</h2>
-<form ng-submit="vm.login()" novalidate id="login_form" class="form-horizontal">
-	<div ng-if="errors.length > 0" class="bg-primary-lt fg-primary-dk with-padding block-center">
-		<p ng-repeat="error in errors">{{error}}</p>
-	</div>
-	<div class="input-group">
-		<label for="login_input">Identyfikator:</label>
-		<input type="text" class="col-60" id="login_input" placeholder="" ng-model="user.id">
-	</div>
-	<div class="input-group">
-		<label for="pass_input">Hasło:</label>
-		<input type="password" class="col-60" id="pass_input" placeholder="" ng-model="user.password">
-	</div>
-	<input type="submit" value="Zaloguj" class="btn-primary">
-</form>
+<div class="hero bg-secondary-lt fg-secondary-dk">
+    <h1 class="fg-primary">Logowanie</h1>
+    <hr>
+    <form ng-submit="vm.login()" novalidate id="login_form" class="form-horizontal col-50">
+        <div ng-if="errors.length > 0" class="bg-primary-lt fg-primary-dk with-padding block-center">
+            <p ng-repeat="error in errors">{{error}}</p>
+        </div>
+        <div class="input-group">
+            <label for="login_input">Identyfikator:</label>
+            <input type="text" class="col-60" id="login_input" placeholder="admin" ng-model="user.id" autofocus>
+        </div>
+        <div class="input-group">
+            <label for="pass_input">Hasło:</label>
+            <input type="password" class="col-60" id="pass_input" placeholder="admin" ng-model="user.password">
+        </div>
+        <input type="submit" value="Zaloguj" class="btn-primary">
+    </form>
 </div>

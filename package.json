@@ -4,7 +4,7 @@
   "description": "Simple Bank front-end application DEMO",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server -p 8000 -o --push-state"
   },
   "repository": {
     "type": "git",
@@ -16,10 +16,7 @@
     "url": "https://github.com/TeoTN/simplebank/issues"
   },
   "homepage": "https://github.com/TeoTN/simplebank#readme",
-  "dependencies": {
-    "http-server": "^0.8.5" 
-  },
   "devDependencies": {
-    "http-server": "^0.8.5"
+    "spa-http-server": "^0.9.0"
   }
 }

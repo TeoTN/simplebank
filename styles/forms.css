@@ -1,0 +1,62 @@
+input:not([type="checkbox"]):not([type="submit"]),
+textarea,
+select {
+    border: 1px solid #455a64;
+    background: white;
+    padding: 5px 7px;
+    height: 24px;
+}
+
+select {
+    height: 36px;
+}
+
+#login_form {
+    text-align: right;
+}
+
+#login_wrapper {
+    margin: 25px;
+    padding: 25px;
+    background: rgba(207, 216, 220, 0.5);
+}
+
+
+.validate input.ng-dirty.ng-invalid,
+.validate select.ng-dirty.ng-invalid {
+    border-bottom: 2px solid #f00;
+}
+
+.validate input.ng-dirty.ng-valid,
+.validate select.ng-dirty.ng-valid {
+    border-bottom: 2px solid #0a0;
+}
+
+.input-group {
+    display: block;
+    margin: 15px 15px;
+}
+
+.input-group label {
+    font-weight: bold;
+}
+
+select,
+.input-group input:not([type="checkbox"]) {
+    width: 100%;
+    margin-left: 5px;
+}
+
+.form-horizontal .input-group label,
+.form-horizontal .input-group input {
+    display: inline-block;
+}
+
+.form-horizontal .input-group input:not([type="checkbox"]) {
+    width: auto;
+}
+
+button,
+input[type="submit"]{
+    font-size: 18px;
+}

@@ -18,13 +18,6 @@
 		$rootScope.$on(EVENTS.LOGOUT, function(event, data) {
 			$scope.authenticated = false;
 		});
-		var main = $("main");
-		var main_height = main.height();
-		var screen_height = $(window).height();
-		if (main_height < screen_height) {
-			main.height(screen_height-50);
-		}
-		$("footer").offset({top: main.position().top+main.height()});
 	}
 
 	LoginFormController.$inject = ['$scope', '$location', 'Auth']

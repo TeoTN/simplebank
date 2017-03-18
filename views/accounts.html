@@ -5,23 +5,23 @@
 			<p ng-repeat="error in errors">{{error}}</p>
 		</div>
 		<div class="account" ng-repeat="account in account_list">
-			<h2>{{account.name}}&nbsp;<small class="fg-secondary">{{account.type}}</small></h2>
+			<h3>{{account.name}}&nbsp;<small class="fg-secondary">{{account.type}}</small></h3>
 			<div class="text-right">
-				<div class="account-col">
-					<h3>Saldo bieżące</h3>
-					<h1 class="fg-primary">{{account.balance | number:2}}</h1>
+				<div class="account-col col-30">
+					<h4>Saldo bieżące</h4>
+					<p class="fg-primary h2">{{account.balance | number:2}}</p>
 				</div>
-				<div class="account-col">
-					<h3>Dostępna kwota</h3>
-					<h1 class="fg-primary">{{account.amount | number:2}}</h1>
+				<div class="account-col col-30">
+					<h4>Dostępna kwota</h4>
+					<p class="fg-primary h2">{{account.amount | number:2}}</p>
 				</div>
-				<div class="account-col">
-					<h3>Środki zablokowane</h3>
-					<h1 class="fg-primary">{{account.deposit | number:2}}</h1>
+				<div class="account-col col-30">
+					<h4>Środki zablokowane</h4>
+					<p class="fg-primary h2">{{account.deposit | number:2}}</p>
 				</div>
 			</div>
-			<ul class="vertical pull-right" id="account_links">
-				<li><a href="/notfound/">Historia</a></li>
+			<ul class="vertical text-right bg-secondary-lt" id="account_links">
+				<li><a href="/transfers/">Historia</a></li>
 				<li><a href="/notfound/">Karty</a></li>
 				<li><a href="/transfers/new/{{account.id}}">Nowy przelew</a></li>
 			</ul>

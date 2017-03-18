@@ -136,7 +136,7 @@
 					deferred.resolve(by_user);
 				}
 				else {
-					deferred.reject("Użytkownik nie ma kont.");
+					deferred.reject("Użytkownik nie prowadzi żadnego rachunku.");
 				}
 			});
 

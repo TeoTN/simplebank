@@ -11,4 +11,4 @@ Functionalities required and developed are:
 
 The application language is Polish. Styles aren't polished yet, hence there are some glitches. 
 It can be run with http-server which is provided by npm.
-It was built in mere few hours so please forgive us all its imperfections and not using Bootstrap.
+The project was built in a mere few hours and hence we apology for its imperfections.
